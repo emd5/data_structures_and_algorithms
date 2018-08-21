@@ -6,7 +6,7 @@ Implement the insertion methods for the LinkedList class.
 The challenge is to implement the includes and find method for the LinkedList
 
  ## Solution
- ![LinkedList 1](../../linked_list_append.JPG)
+ ![LinkedList 1](../../assets/linked_list_append.JPG)
 
  ![LinkedList 2](../../assets/linked_list_append_2.JPG)
 
