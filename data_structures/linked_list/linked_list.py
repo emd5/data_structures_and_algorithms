@@ -1,6 +1,11 @@
 from .node import Node
 from typing import Any
 
+
+
+
+
+
 class LinkedList(object):
     def __init__(self):
         self.head: Node = None
@@ -34,7 +39,7 @@ class LinkedList(object):
                 return True
             current = current._next
 
-        return False 
+        return False
 
     def append(self, val):
         current = self.head
@@ -54,4 +59,3 @@ class LinkedList(object):
         while current.val is not val:
             current = current._next
         current._next = Node(new_value, current._next)
-    

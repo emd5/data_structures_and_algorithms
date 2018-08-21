@@ -4,6 +4,11 @@ import pytest
 def empty_list():
     return LinkedList()
 
+
+
+
+
+
 @pytest.fixture
 def small_list():
     ll = LinkedList()
