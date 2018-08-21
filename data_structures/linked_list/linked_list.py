@@ -1,4 +1,4 @@
-from .node import Node
+from node import Node
 from typing import Any
 
 
@@ -38,12 +38,18 @@ class LinkedList(object):
         return False
 
     def append(self, val):
+        """
+        Adds a new node with the given value to the end of the list
+        """
         current = self.head
         while current.next is not None:
             current = current._next
-        new_node = Node(val)
+        current._next = Node(val)
 
     def insert_before(self, val, new_value):
+        """
+        Adds a new node with the given newValue immediately before the first value node
+        """
         current = self.head
         while current._next.val is not val:
             current = current._next
@@ -51,6 +57,9 @@ class LinkedList(object):
         current._next = new_node
 
     def insert_after(self, val, new_value):
+        """
+        Adds a new node with the given newValue immediately after the first value node
+        """
         current = self.head
         while current.val is not val:
             current = current._next

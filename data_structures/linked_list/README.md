@@ -1,13 +1,18 @@
 
-# Insert and shift middle index of array
-The prompt says, "Insert and shift an array in middle at index"	A function that excepts a list and the value as a parameter,
-returns the list where value is inserted in middle of list.
+# Lab 05: Linked List
+Implement the insertion methods for the LinkedList class.
 
  ## Challenge
-The challenge is to take an array and insert a given value into the middle of the index.
+The challenge is to implement the includes and find method for the LinkedList
 
  ## Solution
- ![LinkedList](assets/array_shift.jpg)
+ ![LinkedList 1](assets/linked_list_append.jpg)
+
+ ![LinkedList 2](assets/linked_list_append_2.jpg)
 
 
  ## Changelog
+
+ 2018-08-20
+ ======
+- [x] Implement the append, insertBefore, and insertAfter methods in the linked list.
