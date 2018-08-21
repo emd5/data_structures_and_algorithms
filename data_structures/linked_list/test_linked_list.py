@@ -15,7 +15,7 @@ def small_list():
     ll.insert(3)
     ll.insert(4)
     ll.insert(5)
-    return ll
+    return ll # ll = [5,4,3,2,1]
 
 
 def test_linked_lists_exist():
@@ -52,17 +52,29 @@ def test_includes_returns_true_if_exists(small_list):
     assert actual is True
 
 
-def test_append_to_list(ll):
-    assert ll.append(25)
+def test_append_to_list(small_list):
+    assert small_list.append(90) is True
 
 
-def test_insert_before_list(ll):
-    assert ll.insert_before(3, 25)
+def test_insert_before_list(small_list):
+    small_list.insert_before(3, 25)
+    assert small_list.includes(25) is True
 
 
-def test_insert_after_list(ll):
-    assert ll.insert_after(4, 26)
+def test_insert_after_list(small_list):
+    small_list.insert_after(4, 26)
+    assert small_list.includes(26) is True
 
 
-def test_insert_after_at_end_of_list(ll):
-    assert ll.insert_after(5, 27)
+def test_insert_after_at_end_of_list(small_list):
+    small_list.insert_after(5, 27)
+    assert small_list.includes(27) is True
+
+
+def test_kth_from_the_end_with_value(small_list):
+    assert small_list.kth_from_the_end(3) == 4
+
+def test_kth_from_the_end_no_value_in_list(small_list):
+    with pytest.raises(AttributeError):
+        small_list.kth_from_the_end(50)
+

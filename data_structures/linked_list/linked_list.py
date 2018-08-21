@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 from typing import Any
 
 
@@ -42,7 +42,7 @@ class LinkedList(object):
         Adds a new node with the given value to the end of the list
         """
         current = self.head
-        while current.next is not None:
+        while current._next is not None:
             current = current._next
         current._next = Node(val)
 
@@ -51,6 +51,10 @@ class LinkedList(object):
         Adds a new node with the given newValue immediately before the first value node
         """
         current = self.head
+
+        if self.head is val:
+            new_node = Node(new_value,current._next)
+            current._next == new_node
         while current._next.val is not val:
             current = current._next
         new_node = Node(new_value, current._next)
@@ -64,3 +68,28 @@ class LinkedList(object):
         while current.val is not val:
             current = current._next
         current._next = Node(new_value, current._next)
+        if current._next is None:
+            current._next = Node(new_value,current._next)
+
+    def kth_from_the_end(self, val):
+        """
+        Takes in a value k
+        :param val:
+        :return: Returns a node of the value from the end of the LL
+        """
+        length = 0
+        current = self.head
+
+        while current._next is not None:
+            length +=1
+            current = current._next
+
+        count = length - val
+        current = self.head
+        while count is not 0:
+            count -= 1
+            current = current._next
+
+        return current.val
+
+
