@@ -2,10 +2,6 @@ from .node import Node
 from typing import Any
 
 
-
-
-
-
 class LinkedList(object):
     def __init__(self):
         self.head: Node = None
