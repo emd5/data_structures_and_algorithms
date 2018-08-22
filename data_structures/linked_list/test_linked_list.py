@@ -74,6 +74,7 @@ def test_insert_after_at_end_of_list(small_list):
 def test_kth_from_the_end_with_value(small_list):
     assert small_list.kth_from_the_end(3) == 4
 
+
 def test_kth_from_the_end_no_value_in_list(small_list):
     with pytest.raises(AttributeError):
         small_list.kth_from_the_end(50)
