@@ -53,7 +53,8 @@ def test_includes_returns_true_if_exists(small_list):
 
 
 def test_append_to_list(small_list):
-    assert small_list.append(90) is True
+    small_list.append(4)
+    assert small_list.includes(4) is True
 
 
 def test_insert_before_list(small_list):
@@ -73,6 +74,7 @@ def test_insert_after_at_end_of_list(small_list):
 
 def test_kth_from_the_end_with_value(small_list):
     assert small_list.kth_from_the_end(3) == 4
+
 
 def test_kth_from_the_end_no_value_in_list(small_list):
     with pytest.raises(AttributeError):

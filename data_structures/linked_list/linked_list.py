@@ -42,9 +42,11 @@ class LinkedList(object):
         Adds a new node with the given value to the end of the list
         """
         current = self.head
-        while current._next is not None:
+        while current._next:
             current = current._next
-        current._next = Node(val)
+
+        new_node = Node(val)
+        current._next = new_node
 
     def insert_before(self, val, new_value):
         """
@@ -52,9 +54,9 @@ class LinkedList(object):
         """
         current = self.head
 
-        if self.head is val:
+        if current is val:
             new_node = Node(new_value,current._next)
-            current._next == new_node
+            current._next = new_node
         while current._next.val is not val:
             current = current._next
         new_node = Node(new_value, current._next)
