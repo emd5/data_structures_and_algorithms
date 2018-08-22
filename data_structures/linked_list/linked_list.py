@@ -42,7 +42,7 @@ class LinkedList(object):
         Adds a new node with the given value to the end of the list
         """
         current = self.head
-        while current:
+        while current._next:
             current = current._next
 
         new_node = Node(val)

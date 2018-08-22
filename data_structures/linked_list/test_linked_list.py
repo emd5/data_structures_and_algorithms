@@ -53,7 +53,8 @@ def test_includes_returns_true_if_exists(small_list):
 
 
 def test_append_to_list(small_list):
-    assert small_list.append(90) is True
+    small_list.append(4)
+    assert small_list.includes(4) is True
 
 
 def test_insert_before_list(small_list):
