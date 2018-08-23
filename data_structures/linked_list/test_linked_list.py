@@ -1,4 +1,5 @@
 from .linked_list import LinkedList
+from .ll_merge import merge_list
 import pytest
 
 
@@ -15,7 +16,29 @@ def small_list():
     ll.insert(3)
     ll.insert(4)
     ll.insert(5)
-    return ll # ll = [5,4,3,2,1]
+    return ll
+
+
+@pytest.fixture
+def linked_list_1():
+    ll_1 = LinkedList()
+    ll_1.insert(1)
+    ll_1.insert(3)
+    ll_1.insert(5)
+    ll_1.insert(7)
+    ll_1.insert(9)
+    return ll_1
+
+
+@pytest.fixture
+def linked_list_2():
+    ll_2 = LinkedList()
+    ll_2.insert(2)
+    ll_2.insert(4)
+    ll_2.insert(6)
+    ll_2.insert(8)
+    ll_2.insert(10)
+    return ll_2
 
 
 def test_linked_lists_exist():
@@ -25,6 +48,16 @@ def test_linked_lists_exist():
 def test_create_instance_of_list():
     ll = LinkedList()
     assert isinstance(ll, LinkedList)
+
+
+def test_create_instance_of_ll_1():
+    ll_1 = LinkedList()
+    assert isinstance(ll_1, LinkedList)
+
+
+def test_create_instance_of_ll_2():
+    ll_2 = LinkedList()
+    assert isinstance(ll_2, LinkedList)
 
 
 def test_default_property_head(empty_list):
@@ -80,3 +113,17 @@ def test_kth_from_the_end_no_value_in_list(small_list):
     with pytest.raises(AttributeError):
         small_list.kth_from_the_end(50)
 
+
+def test_merge_list_exist(linked_list_1, linked_list_2):
+    assert merge_list(linked_list_1, linked_list_2) is True
+
+
+
+# def test_merge_list_method_with_one_empty_list(linked_list_1, linked_list_2):
+#     actual = 9
+#     ll_3 = merge_list(linked_list_1, linked_list_2)
+#     pass
+#
+#
+# def test_merge_list_method_with_one_short_linkedlist():
+#     pass
