@@ -118,12 +118,11 @@ def test_merge_list_exist(linked_list_1, linked_list_2):
     assert merge_list(linked_list_1, linked_list_2) is True
 
 
+def test_merge_list_with_one_empty_list(linked_list_1, linked_list_2):
+    actual = 9
+    ll_3 = merge_list(linked_list_1, linked_list_2)
+    pass
 
-# def test_merge_list_method_with_one_empty_list(linked_list_1, linked_list_2):
-#     actual = 9
-#     ll_3 = merge_list(linked_list_1, linked_list_2)
-#     pass
-#
-#
-# def test_merge_list_method_with_one_short_linkedlist():
-#     pass
+
+def test_merge_list_method_with_one_short_linkedlist():
+    pass
