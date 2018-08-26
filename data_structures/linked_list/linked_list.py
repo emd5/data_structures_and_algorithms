@@ -55,7 +55,7 @@ class LinkedList(object):
         current = self.head
 
         if current is val:
-            new_node = Node(new_value,current._next)
+            new_node = Node(new_value, current._next)
             current._next = new_node
         while current._next.val is not val:
             current = current._next
@@ -64,14 +64,14 @@ class LinkedList(object):
 
     def insert_after(self, val, new_value):
         """
-        Adds a new node with the given newValue immediately after the first value node
+        Adds a new node with the new value immediately after the first value node
         """
         current = self.head
         while current.val is not val:
             current = current._next
         current._next = Node(new_value, current._next)
         if current._next is None:
-            current._next = Node(new_value,current._next)
+            current._next = Node(new_value, current._next)
 
     def kth_from_the_end(self, val):
         """
@@ -83,7 +83,7 @@ class LinkedList(object):
         current = self.head
 
         while current._next is not None:
-            length +=1
+            length += 1
             current = current._next
 
         count = length - val
