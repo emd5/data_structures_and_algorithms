@@ -1,10 +1,11 @@
 
 # Code Challenge 08: Linked List - merge two linked list
-Implement the method that merges two linked lists. ​
+Merge two singly linked lists. ​
 
  ## Challenge
-The challenge is to implement a merge_lists method which takes two linked lists as arguments Zip the two linked lists
-together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list
+The challenge is to implement a function called merge lists which takes two linked lists as arguments. Zip the two
+linked lists together into one so that the nodes alternate between the two lists and return a
+reference to the head of the zipped list.
 
  ## Solution
  ![Merge two LL](../../assets/merge_ll.jpg)
