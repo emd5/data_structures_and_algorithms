@@ -3,24 +3,28 @@ from .node import Node
 
 class Queue(object):
     def __init__(self):
+        """An instance method of the queue object. """
         self.front: Node = None
-        self._length: int =0
+        self._length: int = 0
 
     def __str__(self):
+        """A string representation of the queue object. """
         return f'Front: {self.front} | Length: {self._length}'
 
     def __repr__(self):
+        """An 'official' string reputation of the queue object. """
         return f'<Queue | Front: {self.front} | Length: {self._length}'
 
     def __len__(self):
+        """The length of the queue. """
         return self._length
 
     def enqueue(self, val):
-        """Which takes any value as an argument and adds that value to the back of the queue """
+        """Which takes any value as an argument and adds that value to the back of the queue. """
         pass
 
     def dequeue(self):
-        """Which takes no arguments and removes / returns the Node at the front of the queue"""
+        """Which takes no arguments and removes / returns the Node at the front of the queue. """
         pass
 
 
