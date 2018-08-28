@@ -1,18 +1,23 @@
-from ../queue import queue
-from ../stack import stack
+from .data_structures.queue import Queue
+from .data_structures.stack import Stack
 
 
 def queues_with_stacks():
     """
     This method implements a queue with two stacks
-    :return:
+    :return: the
     """
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    stack.push(4)
+    stack1 = Stack()
+    stack1.push(1)
+    stack1.push(2)
+    stack1.push(3)
+    stack1.push(4)
 
+    stack2 = Stack()
+
+    queue = Queue()
     queue.dequeue()
-    queue.enqueue()
+
+
 
 
