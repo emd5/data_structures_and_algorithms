@@ -13,16 +13,15 @@ class Stack(object):
 
     def __repr__(self):
         """An 'official' string reputation of the stack object. """
-        return f'<Stack| Top: {self.top} | Length: {self._length}'
+        return f'<Stack | Top: {self.top} | Length: {self._length}'
 
     def __len__(self):
-        """The length of the stack"""
+        """The length of the stack. """
         return self._length
 
-    def push(self, node):
+    def push(self, val):
         """Which takes any value as an argument and adds that value to the top of the stack. """
-        node._next = self.top
-        self.top = node
+        self.top = Node(val, self.top)
 
     def pop(self):
         """Which takes no arguments and removes / returns the Node at the top of the stack. """
@@ -33,4 +32,8 @@ class Stack(object):
 
     def peek(self):
         """Which takes no arguments and returns the Node at the top of the stack. """
-        return self.top
+        try:
+            if self.top is not None:
+                return self.top
+        except ReferenceError:
+            print('List is empty')

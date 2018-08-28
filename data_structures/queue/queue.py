@@ -5,6 +5,7 @@ class Queue(object):
     def __init__(self):
         """An instance method of the queue object. """
         self.front: Node = None
+        self.rear: Node = None
         self._length: int = 0
 
     def __str__(self):
@@ -21,11 +22,17 @@ class Queue(object):
 
     def enqueue(self, val):
         """Which takes any value as an argument and adds that value to the back of the queue. """
-        pass
+        self.rear = Node(val, self.rear)
 
     def dequeue(self):
         """Which takes no arguments and removes / returns the Node at the front of the queue. """
-        pass
+        temp = self.front
+        self.front = self.front._next
+        temp._next = None
+        return temp
+
+    def peek(self):
+        return self.front
 
 
 
