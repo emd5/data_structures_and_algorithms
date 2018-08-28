@@ -22,7 +22,7 @@ class Stack(object):
     def push(self, node):
         """Which takes any value as an argument and adds that value to the top of the stack. """
         node._next = self.top
-        self.top =node
+        self.top = node
 
     def pop(self):
         """Which takes no arguments and removes / returns the Node at the top of the stack. """
