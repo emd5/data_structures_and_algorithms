@@ -1,5 +1,5 @@
-from stack import Stack
-from queue import Queue
+from .data_structures.stack import Stack
+from .data_structures.queue import Queue
 import pytest
 
 
@@ -13,8 +13,18 @@ def empty_stack():
 def small_stack():
     """Set up a stack with some values. """
     small_stack = Stack()
+    small_stack.push(1)
     small_stack.push(2)
-    small_stack.push(40)
-    small_stack.push(32)
-    small_stack.push(14)
+    small_stack.push(3)
+    small_stack.push(4)
     return small_stack
+
+
+
+
+
+
+
+
+
+
