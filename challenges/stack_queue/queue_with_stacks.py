@@ -1,22 +1,31 @@
-from .data_structures.queue import Queue
-from .data_structures.stack import Stack
+from data_structures.stack.node import Node
+from data_structures.stack.stack import Stack
 
 
-def queues_with_stacks():
+stack1 = Stack()
+stack2 = Stack()
+
+
+def enqueue(self,val):
+    """This method inserts value into the Queue using FIFO using stacks push pop methods. """
+    node = Node(val, self.top)
+    stack1.push(node)
+    return self.top
+
+
+def dequeue():
+    """This method extracts a value from the queue using FIFO using stacks push pop methods.
+    :return:
     """
-    This method implements a queue with two stacks
-    :return: the
-    """
-    stack1 = Stack()
-    stack1.push(1)
-    stack1.push(2)
-    stack1.push(3)
-    stack1.push(4)
+    if stack2.top is not None:
+        return stack2.pop()
+    while stack1.top is not None:
+        node = stack1.pop()
+        stack2.push(node)
+        return stack1.pop()
 
-    stack2 = Stack()
 
-    queue = Queue()
-    queue.dequeue()
+
 
 
 
