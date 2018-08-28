@@ -6,7 +6,7 @@ stack1 = Stack()
 stack2 = Stack()
 
 
-def enqueue(self,val):
+def enqueue(self, val):
     """This method inserts value into the Queue using FIFO using stacks push pop methods. """
     node = Node(val, self.top)
     stack1.push(node)

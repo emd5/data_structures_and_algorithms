@@ -21,7 +21,9 @@ class Stack(object):
 
     def push(self, val):
         """Which takes any value as an argument and adds that value to the top of the stack. """
+        temp = self.top
         self.top = Node(val, self.top)
+        self.top._next = temp
 
     def pop(self):
         """Which takes no arguments and removes / returns the Node at the top of the stack. """

@@ -22,12 +22,14 @@ class Queue(object):
 
     def enqueue(self, val):
         """Which takes any value as an argument and adds that value to the back of the queue. """
+        temp = self.rear
         self.rear = Node(val, self.rear)
+        temp._next = self.rear
 
     def dequeue(self):
         """Which takes no arguments and removes / returns the Node at the front of the queue. """
         temp = self.front
-        self.front = self.front._next
+        self.front = temp._next
         temp._next = None
         return temp
 
