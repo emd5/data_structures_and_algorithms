@@ -1,22 +1,26 @@
 from data_structures.queue.queue import Queue
-
-
-cat_queue = Queue()
-dog_queue = Queue()
+from data_structures.queue.node import Node
 
 
 class AnimalShelter(object):
+
     def enqueue(self, animal):
         """Adds animal to the shelter. animal can be either a dog or a cat object.
         :param animal: a string animal argument
         """
+        longest = 0
         while cat_queue is not None or dog_queue is not None:
             if not animal:
                 return 'Invalid animal'
             if animal.lower() is 'cat':
-                cat_queue.enqueue(animal)
+                cat_node = Node(animal)
+
+
+
             elif animal.lower is 'dog':
-                dog_queue.enqueue(animal)
+                dog_node = Node(animal)
+
+
 
     def dequeue(self, pref):
         """A method that returns the longest waiting cat or dog.
@@ -24,10 +28,10 @@ class AnimalShelter(object):
         :return: a string of either a dog or a cat.
         """
         if pref.lower() == 'cat':
-            return cat_queue.front.val
+            return cat_queue.dequeue()
         elif pref.lower() == 'dog':
-            return dog_queue.front.val
+            return dog_queue.dequeue()
         else:
-            return 'dog' # We prefer dog
+            return 'dog'  # We prefer dog
 
 
