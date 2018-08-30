@@ -28,8 +28,8 @@ class Stack(object):
     def pop(self):
         """Which takes no arguments and removes / returns the Node at the top of the stack. """
         temp = self.top
-        self.top = self.top.next
-        temp.next = None
+        self.top = self.top._next
+        temp._next = None
         return temp
 
     def peek(self):
