@@ -41,6 +41,7 @@ class Stack(object):
         except AttributeError:
             return 'Stack is empty'
 
+
     def peek(self):
         """Which takes no arguments and returns the Node at the top of the stack. """
         try:
