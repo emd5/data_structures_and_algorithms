@@ -6,9 +6,14 @@ def test_binary_tree_exists():
     assert BinaryTree
 
 
+def test_non_empty_binary_tree():
+
+
+
 def test_insert_empty_tree():
     tree = BinaryTree()
-    assert tree.insert(34)
+    expected = tree.insert(1)
+    assert expected == tree
 
 
 

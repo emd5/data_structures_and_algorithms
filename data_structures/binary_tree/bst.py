@@ -15,8 +15,8 @@ class Node:
 
 class BinaryTree:
     def __init__(self, iterable=None):
-        self.root = None
-        self.val = None
+        self.root = Node
+        self.val = Node
         self.data = None
         self.left = None
         self.right = None
@@ -25,7 +25,7 @@ class BinaryTree:
         print(f'Binary Tree | Data: {self.data} | Left: {self.left} | Right: {self.right}')
 
     def __repr__(self):
-        print(f'Binary Tree | Data {self.data}')
+        print(f'Binary Tree | Value: {self.value}')
 
     def insert(self, value):
         """Insert a new node into the tree. """
@@ -40,18 +40,18 @@ class BinaryTree:
             if value < current.val:
                 current.left = current
                 if current.left is None:
-                    current.left = Node(value.data)
+                    current.left = Node(value)
                 else:
                     self.insert(current)
 
             # Go right when value < current
             elif value > current.val:
                 if current.right is None:
-                    current.right = Node(value.data)
+                    current.right = Node(value)
                 else:
                     self.insert(current)
-        except AttributeError:
-            print('Duplicate Value')
+        except AttributeError as e:
+            print(e)
 
     def in_order(self, callable=lambda node: print(node)):
         """Go left until can't go any further, visit, the go right """

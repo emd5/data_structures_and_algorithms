@@ -1,19 +1,35 @@
-from .linked_list import LinkedList
+def get_merge_list(ll_1, ll_2):
+
+    length_1 = get_length(ll_1)
+    length_2 = get_length(ll_2)
+
+    if length_1 < length_2:
+        return (merge_list(ll_1, ll_2))
+    else:
+        return (merge_list(ll_2, ll_1))
 
 
-def merge_list(ll_1, ll_2):
+def merge_list(small_list, big_list):
+    """The first argument is the smaller list than the second argument"""
+    smaller_list = get_length(small_list)
+    small = small_list.head
+    big = big_list.head
+    while smaller_list is not 1:
+        smaller_list -= 1
+        big_list.insert_before(big.val, small.val)
+        small = small._next
+        big = big._next
+    return big_list
 
-    ll_3 = LinkedList()
-    current_1 = ll_1.head
-    current_2 = ll_2.head
 
-    while current_1 is not None or current_2 is not None:
-        if current_1 is not None:
-            ll_3.append(current_1.val)
-            current_1 = current_1._next
-        if current_2 is not None:
-            ll_3.append(current_2.val)
-            current_2 = current_2._next
-    return ll_3
+def get_length(ll):
+    current = ll.head
+    count = 0
+    while current is not None:
+        current = current._next
+        count += 1
+    return count
+
+
 
 
