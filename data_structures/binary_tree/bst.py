@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, val, data=None, left=None, right=None):
-        self.val = val
+        self.value = val
         self.data = data
         self.left = left
         self.right = right
@@ -15,35 +15,45 @@ class Node:
 class BinaryTree(object):
     def __init__(self, iterable=[]):
         self.root = None
+
+        if iterable is None:
+            iterable = []
+
         for i in iterable:
             self.insert(i)
 
     def __str__(self):
-        print(f'Binary Tree | Root: {self.root} | In order: {self.in_order()}')
+        print()
 
     def __repr__(self):
-        print(f'Binary Tree | In order {self.in_order()} | Pre Order: {self.pre_order()} '
-              f'| Post Order: {self.post_order()}')
+        print()
 
     def insert(self, value):
         """Insert a new node into the tree. """
+        node = Node(value)
 
         if self.root is None:
-            self.root = Node(value)
+            self.root = node
+            return node
 
-        def _insert(current_node):
-            if current_node.value < value:
-                current_node.left = current_node
-                if current_node.left is None:
-                    current_node.left = Node(value)
-                else:
-                    _insert(current_node)
+        current = self.root
+        while current:
+            if value == current.value:
+                raise ValueError('Value already exist')
 
-            elif  current_node.value > value:
-                if current_node.right is None:
-                    current_node.right = Node(value)
-                else:
-                    _insert(current_node)
+            if value < current.value:
+                if current.left is None:
+                    current.left = node
+                    break
+                current = current.left
+
+            if value > current.value:
+                if current.right is None:
+                    current.right = node
+                    break
+                current = current.right
+
+        return node
 
     def in_order(self, callable=lambda node: print(node)):
         """Go left until can't go any further, visit, the go right """
