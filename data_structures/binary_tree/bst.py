@@ -4,57 +4,50 @@ class Node:
         self.data = data
         self.left = left
         self.right = right
-        self.parent = None
 
     def __repr__(self):
-        print(f'Binary Tree  | Data: {self.data} | Left: {self.left} | Right: {self.right}')
+        print(f'Node  | Value: {self.val} | Left: {self.left} | Right: {self.right}')
 
     def __str__(self):
-        print(f'Data: {self.left.data} | Right: {self.right}')
+        print(f'Node  | Value: {self.val} | Left: {self.left} | Right: {self.right}')
 
 
-class BinaryTree:
-    def __init__(self, iterable=None):
-        self.root = Node
-        self.val = Node
-        self.data = None
-        self.left = None
-        self.right = None
+class BinaryTree(object):
+    def __init__(self, iterable=[]):
+        self.root = None
+        for i in iterable:
+            self.insert(i)
 
     def __str__(self):
-        print(f'Binary Tree | Data: {self.data} | Left: {self.left} | Right: {self.right}')
+        print(f'Binary Tree | Root: {self.root} | In order: {self.in_order()}')
 
     def __repr__(self):
-        print(f'Binary Tree | Value: {self.value}')
+        print(f'Binary Tree | In order {self.in_order()} | Pre Order: {self.pre_order()} '
+              f'| Post Order: {self.post_order()}')
 
     def insert(self, value):
         """Insert a new node into the tree. """
-        try:
-            # if root is none insert
-            if self.root is None:
-                self.root = Node(value)
 
-            current = self.root
+        if self.root is None:
+            self.root = Node(value)
 
-            # Go left when value < current
-            if value < current.val:
-                current.left = current
-                if current.left is None:
-                    current.left = Node(value)
+        def _insert(current_node):
+            if current_node.value < value:
+                current_node.left = current_node
+                if current_node.left is None:
+                    current_node.left = Node(value)
                 else:
-                    self.insert(current)
+                    _insert(current_node)
 
-            # Go right when value < current
-            elif value > current.val:
-                if current.right is None:
-                    current.right = Node(value)
+            elif  current_node.value > value:
+                if current_node.right is None:
+                    current_node.right = Node(value)
                 else:
-                    self.insert(current)
-        except AttributeError as e:
-            print(e)
+                    _insert(current_node)
 
     def in_order(self, callable=lambda node: print(node)):
         """Go left until can't go any further, visit, the go right """
+
         def _walk(node=None):
             """A recursive helper method that doesn't make available elsewhere"""
             #  Base case
