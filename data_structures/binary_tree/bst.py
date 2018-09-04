@@ -104,5 +104,3 @@ class BinaryTree(object):
             callable(node)
 
         _walk(self.root)
-
-
