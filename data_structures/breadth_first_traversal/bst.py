@@ -8,11 +8,11 @@ class Node:
 
     def __repr__(self):
         """An official string representation of a Node in the Binary Tree. """
-        return f'Node  | Value: {self.value} | Left: {self.left} | Right: {self.right}'
+        return f'{self.value}'
 
     def __str__(self):
         """A string representation of a node in the Binary tree. """
-        return f'Node  | Value: {self.value} | Left: {self.left} | Right: {self.right}'
+        return f'{self.value} | L: {self.left} |  R: {self.right} '
 
 
 class BinaryTree(object):

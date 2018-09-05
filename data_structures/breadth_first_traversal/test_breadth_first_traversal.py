@@ -24,11 +24,12 @@ def test_breadth_first_traversal_exists():
 def test_breadth_first_traversal_with_bt():
     """Test method with an argument with a Binary tree. """
     bt = BinaryTree([30, 20, 10, 5, 50])
-    breadth_first_traversal(bt.root) is True
+    assert breadth_first_traversal(bt.root)
 
 
 def test_breath_first_traversal():
     """Test method """
+    pass
 
 
 
