@@ -1,19 +1,23 @@
 class Node:
     def __init__(self, val, data=None, left=None, right=None):
+        """Attributes for the Binary Tree Class"""
         self.value = val
         self.data = data
         self.left = left
         self.right = right
 
     def __repr__(self):
+        """An official string representation of a Node in the Binary Tree. """
         return f'Node  | Value: {self.value} | Left: {self.left} | Right: {self.right}'
 
     def __str__(self):
+        """A string representation of a node in the Binary tree. """
         return f'Node  | Value: {self.value} | Left: {self.left} | Right: {self.right}'
 
 
 class BinaryTree(object):
     def __init__(self, iterable=[]):
+        """Constructor for the Binary Tree class"""
         self.root = None
 
         if iterable is None:
@@ -23,10 +27,12 @@ class BinaryTree(object):
             self.insert(i)
 
     def __str__(self):
-        return f'Binary Tree | Root: {self.root}'
+        """A string representation of the Binary Tree """
+        return f'Binary Tree | Root: {self.root} | In order: {self.in_order()}'
 
     def __repr__(self):
-        return f'Binary Tree | Root: {self.root}'
+        """An official string represenation of the Binary Tree """
+        return f'Binary Tree | Root: {self.root} | In order: {self.in_order()}'
 
     def insert(self, value):
         """Insert a new node into the tree. """
@@ -56,7 +62,7 @@ class BinaryTree(object):
         return node
 
     def in_order(self, callable=lambda node: print(node)):
-        """Go left until can't go any further, visit, the go right """
+        """Go left until can't go any further, visit, the go right. """
 
         def _walk(node=None):
             """A recursive helper method that doesn't make available elsewhere"""
@@ -76,9 +82,9 @@ class BinaryTree(object):
         _walk(self.root)
 
     def pre_order(self, callable=lambda node: print(node)):
-        """Visit, go left until can't go any further, visit, then go right """
+        """Visit, go left until can't go any further, visit, then go right. """
         def _walk(node=None):
-            """A recursive helper method that doesn't make available elsewhere"""
+            """A recursive helper method that doesn't make available elsewhere. """
             if node is None:
                 return
 
@@ -96,9 +102,9 @@ class BinaryTree(object):
         _walk(self.root)
 
     def post_order(self, callable=lambda node: print(node)):
-        """Visit, go left until can't go any further, visit, then go right """
+        """Visit, go left until can't go any further, visit, then go right. """
         def _walk(node=None):
-            """A recursive helper method that doesn't make available elsewhere"""
+            """A recursive helper method that doesn't make available elsewhere. """
             if node is None:
                 return
 
