@@ -60,7 +60,6 @@ def test_postorder_traversal():
     assert expected == actual
 
 
-
 def test_insert_value_that_already_exists():
     bt = BinaryTree([25])
     with pytest.raises(ValueError):
