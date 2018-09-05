@@ -3,13 +3,6 @@ from .breadth_first_traversal import breadth_first_traversal
 import pytest
 
 
-@pytest.fixture
-def small_binary_tree():
-    """Test set up with binary tree instantiation. """
-    bt = BinaryTree([30, 20, 10, 5, 50])
-    return bt
-
-
 def test_empty_binary_tree():
     """Test to instantiate a binary tree object. """
     bt = BinaryTree()
@@ -23,13 +16,17 @@ def test_breadth_first_traversal_exists():
 
 def test_breadth_first_traversal_with_bt():
     """Test method with an argument with a Binary tree. """
-    bt = BinaryTree([30, 20, 10, 5, 50])
-    assert breadth_first_traversal(bt.root)
+    bt = BinaryTree([50, 75, 100, 60, 25, 30, 10])
+    expected = breadth_first_traversal(bt.root)
+    actual = [50, 25, 75, 10, 30, 60, 100]
+    assert expected == actual
 
 
-def test_breath_first_traversal():
-    """Test method """
-    pass
+def test_breath_first_traversal_with_duplicate_values():
+    """Test method with duplicate values """
+    with pytest.raises(ValueError):
+        bt = BinaryTree([50, 75, 100, 60, 25, 50, 10])
+        breadth_first_traversal(bt)
 
 
 

@@ -12,7 +12,7 @@ class Node:
 
     def __str__(self):
         """A string representation of a node in the Binary tree. """
-        return f'{self.value} | L: {self.left} |  R: {self.right} '
+        return f'{self.value}'
 
 
 class BinaryTree(object):
@@ -35,7 +35,7 @@ class BinaryTree(object):
         return f'Binary Tree | Root: {self.root} | In order: {self.in_order()}'
 
     def insert(self, value):
-        """Insert a new node into the tree. """
+        """Insert a new node into the tree. Returns a node """
         node = Node(value)
 
         if self.root is None:
