@@ -1,9 +1,9 @@
-def breadth_first_traversal(root):
+def breadth_first_traversal(tree):
     """Method which takes a Binary Tree as its unique input. Prints every visited node’s value. """
     to_visit = []
     visited = []
-    if root:
-        to_visit.append(root)
+    if tree:
+        to_visit.append(tree)
     while to_visit:
         current = to_visit.pop(0)
         if current is not None:
