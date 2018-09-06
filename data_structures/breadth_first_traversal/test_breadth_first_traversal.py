@@ -10,14 +10,14 @@ def test_empty_binary_tree():
 
 
 def test_breadth_first_traversal_exists():
-    """Test the method  exists. """
+    """Test the method exists. """
     assert breadth_first_traversal
 
 
 def test_breadth_first_traversal_with_bt():
     """Test method with an argument with a Binary tree. """
     bt = BinaryTree([50, 75, 100, 60, 25, 30, 10])
-    expected = breadth_first_traversal(bt.root)
+    expected = breadth_first_traversal(bt)
     actual = [50, 25, 75, 10, 30, 60, 100]
     assert expected == actual
 
