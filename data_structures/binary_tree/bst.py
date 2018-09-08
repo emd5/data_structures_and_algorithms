@@ -59,7 +59,7 @@ class BinaryTree(object):
         """Go left until can't go any further, visit, the go right """
 
         def _walk(node=None):
-            """A recursive helper method that doesn't make available elsewhere"""
+            """A recursive helper method for traversal"""
             #  Base case
             if node is None:
                 return
@@ -78,7 +78,7 @@ class BinaryTree(object):
     def pre_order(self, callable=lambda node: print(node)):
         """Visit, go left until can't go any further, visit, then go right """
         def _walk(node=None):
-            """A recursive helper method that doesn't make available elsewhere"""
+            """A recursive helper method for traversal"""
             if node is None:
                 return
 
@@ -98,7 +98,7 @@ class BinaryTree(object):
     def post_order(self, callable=lambda node: print(node)):
         """Visit, go left until can't go any further, visit, then go right """
         def _walk(node=None):
-            """A recursive helper method that doesn't make available elsewhere"""
+            """A recursive helper method for traversal"""
             if node is None:
                 return
 
