@@ -42,4 +42,3 @@ def test_unbalanced_with_one_character():
     assert multi_bracket_validation('[') is False
 
 
-"""Test push"""
