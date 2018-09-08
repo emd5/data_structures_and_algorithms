@@ -40,3 +40,6 @@ def test_unbalanced_overlapping_bracket():
 def test_unbalanced_with_one_character():
     """Test when there is one character"""
     assert multi_bracket_validation('[') is False
+
+
+"""Test push"""
