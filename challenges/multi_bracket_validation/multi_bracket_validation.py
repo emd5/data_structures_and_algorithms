@@ -9,15 +9,24 @@ def multi_bracket_validation(string_input):
     stack = Stack()
 
     counter = 0
-
     for letter in string_input:
-        counter += 1
-        if letter == '(' or letter == '{' or letter == '[' and stack is None:
+        if letter == '(' or letter == '{' or letter == '[':
             stack.push(letter)
-        if letter == ')' or letter == '}' or letter == ']' and stack is None:
-            stack.pop()
+            counter += 1
+        elif letter == ')' or letter == '}' or letter == ']':
+            if letter == ')' and stack.peek() == '(':
+                stack.pop()
+                counter -= 1
+            elif letter == '}' and stack.peek() == '{':
+                stack.pop()
+                counter -= 1
+            elif letter == ']' and stack.peek() == '[':
+                stack.pop()
+                counter -= 1
 
-    if stack.top is None:
+    if counter == 0 and stack.top is None:
         return True
     else:
         return False
+
+
