@@ -29,6 +29,9 @@ def test_breath_first_traversal_with_duplicate_values():
         breadth_first_traversal(bt)
 
 
+def test_breadth_first_traversal_with_empty_list():
+    """Test with an empty tree"""
+    pass
 
 
 

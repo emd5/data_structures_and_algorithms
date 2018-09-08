@@ -24,7 +24,7 @@ def test_iterable_creates_bt():
     assert bt.root.right.value == 40
 
 
-def test_inorder_traversal():
+def test_in_order_traversal():
     bt = BinaryTree([20, 18, 12, 19, 11, 14, 40, 31, 22, 33])
     expected = [11, 12, 14, 18, 19, 20, 22, 31, 33, 40]
     actual = []
@@ -36,7 +36,7 @@ def test_inorder_traversal():
     assert expected == actual
 
 
-def test_preorder_traversal():
+def test_pre_order_traversal():
     bt = BinaryTree([20, 18, 12, 19, 11, 14, 40, 31, 22, 33])
     expected = [11, 12, 14, 18, 19, 20, 22, 31, 33, 40]
     actual = []
@@ -48,7 +48,7 @@ def test_preorder_traversal():
     assert expected == actual
 
 
-def test_postorder_traversal():
+def test_post_order_traversal():
     bt = BinaryTree([20, 18, 12, 19, 11, 14, 40, 31, 22, 33])
     expected = [11, 12, 14, 18, 19, 20, 22, 31, 33, 40]
     actual = []
