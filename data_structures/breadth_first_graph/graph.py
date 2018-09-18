@@ -61,21 +61,24 @@ class Graph:
                 n.append(k)
             return n
         else:
-            return 'No neighbors found.'
+            return None
 
     def breadth_first_graph(self, start):
-        """This method recursively visits the neighbors of the current vertex
+        """This method visits the neighbors of the current vertex
         then returns the visited list"""
         visited = []
+        queue = [start]
+        while queue:
+            vertex = queue.pop(0)
+            if vertex not in visited:
+                visited.append(vertex)
+                try:
+                    neighbors = self.get_neighbors(vertex)
 
-        def _walk(vertex):
-            neighbors = self.get_neighbors(vertex)
-            for neighbor in neighbors:
-                if neighbor not in visited:
-                    visited.append(neighbor)
-                    _walk(neighbor)
-        visited.append(start)
-        _walk(start)
+                    for neighbor in neighbors:
+                        queue.append(neighbor)
+                except AssertionError:
+                    return None
         return visited
 
 
