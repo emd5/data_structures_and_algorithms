@@ -28,11 +28,11 @@ class BinaryTree(object):
 
     def __str__(self):
         """A string representation of the Binary Tree """
-        return f'Binary Tree | Root: {self.root} | In order: {self.in_order()}'
+        return f'BT | {self.root} {self.root.left} {self.root.right} =>'
 
     def __repr__(self):
         """An official string represenation of the Binary Tree """
-        return f'Binary Tree | Root: {self.root} | In order: {self.in_order()}'
+        return f'BT | {self.root} {self.root.left}  {self.root.right} =>'
 
     def insert(self, value):
         """Insert a new node into the tree. Returns a node """
@@ -102,7 +102,7 @@ class BinaryTree(object):
         _walk(self.root)
 
     def post_order(self, callable=lambda node: print(node)):
-        """Visit, go left until can't go any further, visit, then go right. """
+        """ go left until can't go any further then go right, then visit. """
         def _walk(node=None):
             """A recursive helper method that doesn't make available elsewhere. """
             if node is None:

@@ -1,32 +1,41 @@
+from .queue import Queue
+
+
 def breadth_first_traversal(tree):
     """Accepts a Binary Tree as its unique input. Prints every compare_list node’s value."""
-    to_visit = []
-    compare_list = []
-    if tree:
-        to_visit.append(tree)
+    q = Queue()
+    bfs_list = []
 
-    while current:
-        current = to_visit.pop(0)
-        if current is not None:
-            compare_list.append(current)
-        if current.left:
-            to_visit.append(current)
-        if current.right:
-            to_visit.append(current)
-    return compare_list
-    # to_visit = []
-    # compare_list = []
-    # if tree:
-    #     to_visit.append(tree)
-    # while to_visit:
-    #     current = to_visit.pop(0)
-    #     if current is not None:
-    #         compare_list.append(current.value)
-    #     if current.left:
-    #         to_visit.append(current.left)
-    #     if current.right:
-    #         to_visit.append(current.right)
-    # return compare_list
+    if tree is None:
+        return AssertionError('No tree found')
+
+    def _walk(tree):
+        """A recursive helper method that traverses through the tree"""
+
+        if q.front is None:
+            return 'Empty Queue'
+
+        if tree.root is None:
+            return 'No binary tree'
+
+        if tree.root:
+            q.enqueue(tree)
+            # bfs_list.append(q.peek())
+
+        if tree.root.right is not None:
+            q.enqueue(tree.root.right)
+            # bfs_list.append(q.peek())
+
+        if tree.root.left is not None:
+            q.enqueue(tree.root.left)
+            # bfs_list.append(q.peek())
+
+        bfs_list.append(q.peek())
+        q.dequeue()
+
+    _walk(tree)
+
+    return bfs_list
 
 
 
