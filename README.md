@@ -11,6 +11,7 @@ Implementation for Data Structures and Algorithms using Python!
     - [Stacks](./data_structures/stack)
     - [Queues](./data_structures/queue)
     - [Binary Trees](./data_structures/binary_tree)
+    - [Graphs](./data_structures/graphs)
 2. Algorithms
     - [Animal Shelter with a Queue](./challenges/fifo_animal_shelter)
     - [Array Shift](./challenges/array_shift)

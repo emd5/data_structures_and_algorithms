@@ -1,17 +1,3 @@
-class Vertex:
-    def __init__(self, vertex=None):
-        """Constructs a vertex"""
-        self.vertex = vertex
-
-    def __repr__(self):
-        """Set up a graph with vertices"""
-        return f'Graph: {self.vertex}'
-
-    def __str__(self):
-        """An official String representation of the vertice object"""
-        return f'Graph: {self.vertex}'
-
-
 class Graph:
     def __init__(self):
         """Constructs an empty graph"""
@@ -52,16 +38,17 @@ class Graph:
 
     def get_neighbors(self, val):
         """Gets the neighbors of that vertex"""
-        if self.has_vert(val) is False:
-            return 'No Vertex found'
-        elif self.graph[val].keys():
-            n = []
-
-            for k in self.graph[val].keys():
-                n.append(k)
-            return n
-        else:
-            return None
+        return self.graph[val]
+        # if self.has_vert(val) is False:
+        #     return 'No Vertex found'
+        # elif self.graph[val].keys():
+        #     n = []
+        #
+        #     for k in self.graph[val].keys():
+        #         n.append(k)
+        #     return n
+        # else:
+        #     return None
 
     def breadth_first_graph(self, start):
         """This method visits the neighbors of the current vertex
@@ -80,6 +67,20 @@ class Graph:
                 except AssertionError:
                     return None
         return visited
+
+    def get_edges(self, vertex_list):
+        """This method accepts a list of vertices to checks the path between,
+        returns a boolean value with a weight"""
+        accumulator = 0
+        for i in range(1, len(vertex_list)):
+            if vertex_list[i] in self.get_neighbors(vertex_list[i-1]):
+                accumulator += self.graph[vertex_list[i - 1]][vertex_list[i]]
+            else:
+                return [False, 0]
+        return [True, accumulator]
+
+
+
 
 
 
