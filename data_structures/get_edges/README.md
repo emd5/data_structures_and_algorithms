@@ -7,3 +7,5 @@ Write a function based on the specifications above, which takes in a graph, and 
 
 ## Solution
  ![get edges whiteboard image](../../assets/<>.jpg)
+ ![example graph](../../assets/get_edge_example1.png)
+ ![example input output](../../assets/get_edge_example2.png)
