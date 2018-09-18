@@ -70,16 +70,15 @@ class Graph:
         queue = [start]
         while queue:
             vertex = queue.pop(0)
-            try:
-                if vertex not in visited:
-                    visited.append(vertex)
-
+            if vertex not in visited:
+                visited.append(vertex)
+                try:
                     neighbors = self.get_neighbors(vertex)
 
                     for neighbor in neighbors:
                         queue.append(neighbor)
-            except AssertionError:
-                return None
+                except AssertionError:
+                    return None
         return visited
 
 
