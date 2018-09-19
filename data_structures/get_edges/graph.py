@@ -72,6 +72,8 @@ class Graph:
         """This method accepts a list of vertices to checks the path between,
         returns a boolean value with a weight"""
         accumulator = 0
+        if len(vertex_list) == 0:
+            return [False, 0]
         for i in range(1, len(vertex_list)):
             if vertex_list[i] in self.get_neighbors(vertex_list[i-1]):
                 accumulator += self.graph[vertex_list[i - 1]][vertex_list[i]]
