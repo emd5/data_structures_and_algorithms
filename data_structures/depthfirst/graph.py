@@ -47,11 +47,21 @@ class Graph:
                 n.append(k)
             return n
         else:
-            return 'No neighbors found.'
+            return None
 
+    def depth_first_graph(self, start_vert):
+        """This method accepts a graph and returns a pre order
+        depth traversal list"""
+        visited = []
 
+        def _walk(vert):
+            visited.append(vert)
+            for e in self.get_neighbors(vert):
+                if e not in visited:
+                    visited.append(e)
+        _walk(self.graph[start_vert])
 
-
+        return visited
 
 
 

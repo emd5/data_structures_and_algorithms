@@ -6,7 +6,7 @@ Create a function that accepts an adjacency list as a graph, and conducts a dept
 
 ## Solution
 
-![get edges whiteboard image](../../assets/get_edge.jpg)
+![get edges whiteboard image](../../assets/depth_first_graph.jpg)
 
 ![depth graph](../../assets/depthgraph.png)
 
