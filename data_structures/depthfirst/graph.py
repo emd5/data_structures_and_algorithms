@@ -56,11 +56,11 @@ class Graph:
 
         def _walk(vert):
             visited.append(vert)
-            for e in self.get_neighbors(vert):
+            for e in self.graph[vert]:
                 if e not in visited:
-                    visited.append(e)
-        _walk(self.graph[start_vert])
+                    _walk(e)
 
+        _walk(start_vert)
         return visited
 
 
