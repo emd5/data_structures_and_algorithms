@@ -49,18 +49,17 @@ class Graph:
         else:
             return None
 
-    def depth_first_graph(self, start_vert):
+    def depth_first_graph(self, start):
         """This method accepts a graph and returns a pre order
         depth traversal list"""
         visited = []
 
         def _walk(vert):
             visited.append(vert)
-            for e in self.graph[vert]:
-                if e not in visited:
-                    _walk(e)
-
-        _walk(start_vert)
+            for neighbors in self.graph[vert]:
+                if neighbors not in visited:
+                    _walk(neighbors)
+        _walk(start)
         return visited
 
 

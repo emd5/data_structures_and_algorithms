@@ -33,6 +33,13 @@ def test_breadth_first_graph_traverse_success(graph_filled_for_traversal):
     assert actual == expected
 
 
+def test_breadth_first_traverse_different_path_success(graph_filled_for_traversal):
+    """Test BFS traverses with a different path through the graph"""
+    expected = ['Pandora', 'Arendelle', 'Metroville', 'Monstropolis', 'Narnia', 'Naboo']
+    actual = graph_filled_for_traversal.breadth_first_graph('Pandora')
+    assert actual == expected
+
+
 def test_bfs_with_one_node(graph_filled_for_traversal):
     """Test for single node with no edges or neighbors"""
     with pytest.raises(TypeError):
@@ -43,3 +50,6 @@ def test_bfs_with_empty_graph(empty_graph):
     """Test bfs with empty graph """
     with pytest.raises(TypeError):
         assert empty_graph.breadth_first_graph()
+
+
+
