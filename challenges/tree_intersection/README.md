@@ -7,4 +7,4 @@ return a set of values found in both trees.
 
 ## Solution
 <!-- Embedded whiteboard image -->
-
+![common trees whiteboard](../../assets/common_trees.jpg)
