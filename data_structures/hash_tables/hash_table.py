@@ -1,11 +1,12 @@
 from .linked_list import LinkedList
 
+
 class HashTable:
     """A class for a hash table."""
     entries_count = 0
     alphabet_size = 52
 
-    def __init__(self, size=8192):
+    def __init__(self, size=8):
         self.table_size = size
         self.hashtable = [None] * self.table_size
 
@@ -31,13 +32,19 @@ class HashTable:
         """
         hash_key = self._hash_key(key)
         if hash_key not in self.hashtable:
-            self.hashtable[hash_key] = LinkedList()
-            self.hashtable[hash_key].insert((key, value))
+            # self.hashtable[hash_key] = LinkedList()
+            # self.hashtable[hash_key].insert((key, value))
+            ll = LinkedList()
+            ll.insert(key)
+            ll.append(value)
+            self.hashtable[hash_key] = ll
             self.entries_count += 1
             return True
-        elif hash_key in self.hashtable:
-            self.hashtable[hash_key].insert((key, value))
+        else:
+            ll = self.hashtable[hash_key]
+            ll.insert(value)
             self.entries_count += 1
+            return False
 
     def get(self, key):
         """Retrieve a value from the hash table by key.
@@ -46,10 +53,14 @@ class HashTable:
         returns: the value stored with the key
         """
         hash_key = self._hash_key(key)
-        if hash_key not in self.hashtable:
-            return KeyError
-        elif hash_key in self.hashtable:
-            return self.hashtable[hash_key].include(key)
+        current = self.hashtable[hash_key].head
+        try:
+            while current is not None:
+                if hash_key in current:
+                    return current
+                current = current.next
+        except KeyError:
+            return 'No Key Found'
 
     def remove(self, key):
         """Retrieve and remove a value from the hash table by key.
