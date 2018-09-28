@@ -18,6 +18,7 @@ Implementation for Data Structures and Algorithms using Python!
     - [Find maximum value with Binary Tree](./challenges/find_maximum_value_binary_tree)
     - [Bracket Validation](./challenges/multi_bracket_validation)
     - [Implement a Queue with 2 Stacks](./challenges/stack_queue)
-
-
+3. Sorting Algorithms
+    - [Insertion Sort](./sorting_algos/insertion_sort)
+    - [Selection Sort](./sorting_algos/selection)
 
