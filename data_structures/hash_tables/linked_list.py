@@ -1,13 +1,13 @@
 class Node(object):
-    def __init__(self, val, _next=None):
+    def __init__(self, val, next=None):
         self.val = val
-        self._next = _next
+        self.next = next
 
     def __str__(self):
         return f'{self.val}'
 
     def __repr__(self):
-        return f'<Node | Val: {self.val} | Next: {self._next}>'
+        return f'<Node | Val: {self.val} | Next: {self.next}>'
 
 
 class LinkedList(object):
@@ -38,7 +38,7 @@ class LinkedList(object):
                 self._length += 1
             temp = self.head
             self.head = Node(val)
-            self.head._next = temp
+            self.head.next = temp
         except AttributeError:
             return f'The head is {self.head}'
 
@@ -46,10 +46,10 @@ class LinkedList(object):
         """Accepts an value argument, returns a boolean if the value exist as a node value within a list. """
         current = self.head
 
-        while current._next is not None:
+        while current.next is not None:
             if current.val == val:
                 return True
-            current = current._next
+            current = current.next
 
         return False
 
@@ -61,11 +61,11 @@ class LinkedList(object):
 
         current = self.head
 
-        while current._next is not None:
-            current = current._next
+        while current.next is not None:
+            current = current.next
         new_node = Node(val)
         self._length += 1
-        current._next = new_node
+        current.next = new_node
 
     def insert_before(self, val, new_value):
         """Adds a new node with the given newValue immediately before the first value node. """
@@ -75,12 +75,12 @@ class LinkedList(object):
         if current.val is val:
             self.insert(new_value)
         else:
-            while current._next.val is not val:
-                current = current._next
+            while current.next.val is not val:
+                current = current.next
 
-            new_node = Node(new_value, current._next)
+            new_node = Node(new_value, current.next)
             # new_node._next = current._next
-            current._next = new_node
+            current.next = new_node
             self._length += 1
 
     def insert_after(self, val, new_value):
@@ -88,15 +88,14 @@ class LinkedList(object):
         current = self.head
 
         while current.val is not val:
-            current = current._next
+            current = current.next
         new_node = Node(new_value)
-        new_node._next = current._next
-        current._next = new_node
+        new_node.next = current.next
+        current.next = new_node
         self._length += 1
 
-        if current._next is None:
-            current._next = Node(new_value)
+        if current.next is None:
+            current.next = Node(new_value)
             self._length += 1
-
 
 

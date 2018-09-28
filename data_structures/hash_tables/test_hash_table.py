@@ -15,6 +15,8 @@ def setup_hash_table():
     hash_table = HashTable()
     hash_table.set('Apple', 'Jack')
     hash_table.set('Joe', 'Schmoe')
+    hash_table.set('Flutter', 'Shy')
+    hash_table.set('Rarity', 'Shy')
     return hash_table
 
 
@@ -23,10 +25,10 @@ def test_hash_table_class_exist():
     assert HashTable
 
 
-def test_size_hash_table():
-    """Test length of hash table is 8192"""
-    hash_table = HashTable()
-    assert hash_table.table_size == 8192
+# def test_size_hash_table():
+#     """Test length of hash table is 8192"""
+#     hash_table = HashTable()
+#     assert hash_table.table_size == 8192
 
 
 def test_hash_table_is_set_successful():
@@ -39,7 +41,7 @@ def test_hash_table_add_same_existing_key():
     """Test add another key and value to hash table is true"""
     hash_table = HashTable()
     assert hash_table.set('Apple', 'Jack') is True
-    assert hash_table.set('Apple', 'Jack') is True
+    assert hash_table.set('Apple', 'John') is True
 
 
 def test_get_key_exists(setup_hash_table):
@@ -47,4 +49,6 @@ def test_get_key_exists(setup_hash_table):
     assert setup_hash_table.get('Apple') == 'Jack'
 
 
-
+# def test_get_key_does_not_exist(setup_hash_table):
+#     """Test for key in hash table does not exist"""
+#     assert setup_hash_table.get('John') == 'No Key Found'
