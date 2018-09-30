@@ -6,7 +6,7 @@ class HashTable:
     entries_count = 0
     alphabet_size = 52
 
-    def __init__(self, size=8):
+    def __init__(self, size=8192):
         self.table_size = size
         self.hashtable = [None] * self.table_size
 
@@ -30,21 +30,20 @@ class HashTable:
             key: the key to store
             value: the value to store
         """
+
         hash_key = self._hash_key(key)
-        if hash_key not in self.hashtable:
-            # self.hashtable[hash_key] = LinkedList()
-            # self.hashtable[hash_key].insert((key, value))
-            ll = LinkedList()
-            ll.insert(key)
-            ll.append(value)
-            self.hashtable[hash_key] = ll
-            self.entries_count += 1
+        key_value = [key, value]
+
+        if self.hashtable[hash_key] is None:
+            self.hashtable[hash_key] = list([key_value])
             return True
         else:
-            ll = self.hashtable[hash_key]
-            ll.insert(value)
-            self.entries_count += 1
-            return False
+            for pair in self.hashtable[hash_key]:
+                if pair[0] == key:
+                    pair[1] = value
+                    return True
+            self.hashtable[hash_key].append(key_value)
+            return True
 
     def get(self, key):
         """Retrieve a value from the hash table by key.
@@ -53,14 +52,11 @@ class HashTable:
         returns: the value stored with the key
         """
         hash_key = self._hash_key(key)
-        current = self.hashtable[hash_key].head
-        try:
-            while current is not None:
-                if hash_key in current:
-                    return current
-                current = current.next
-        except KeyError:
-            return 'No Key Found'
+        if self.hashtable[hash_key] is not None:
+            for pair in self.hashtable[hash_key]:
+                if pair[0] == key:
+                    return pair[1]
+        return None
 
     def remove(self, key):
         """Retrieve and remove a value from the hash table by key.
@@ -68,11 +64,15 @@ class HashTable:
             key: a string to find the value in the hash table
         returns: the value stored with the key
         """
-        hash_key = self._hash_key(key % self.table_size)
-        bucket = self.hashtable[hash_key]
-        for i, kv in bucket:
-            k, v = kv
-            self.hashtable.remove(bucket[i])
-        return KeyError
+        hash_key = self._hash_key(key)
+
+        if self.hashtable[hash_key] is None:
+            return False
+        for i in range(0, len(self.hashtable[hash_key])):
+            if self.hashtable[hash_key][i][0] == key:
+                self.hashtable[hash_key].pop(i)
+                return True
+        return False
+
 
 
