@@ -1,5 +1,5 @@
 def mergesort(arr):
-    """A method using MergeSort that accepts an unsorted array and returns a sorted array"""
+    """A a recursive mergesort method that accepts an unsorted array and returns a sorted array"""
 
     arr_length = len(arr)
     if arr_length > 1:
@@ -29,6 +29,3 @@ def mergesort(arr):
             k += 1
 
     return arr
-
-
-
