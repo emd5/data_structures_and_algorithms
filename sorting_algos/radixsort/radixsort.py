@@ -1,10 +1,13 @@
 def radix_sort(unsorted):
+    """A Radix sort that takes an unsorted list and evaluates at
+    each place of a value, sorts based on the value and returns
+    a sorted list"""
     unsorted_length = len(unsorted)
     modulus = 10
     div = 1
 
     while True:
-        new_list = [[], [], [], [], [], [], [], [], [], []]
+        new_list = [[] for x in range(10)]
         for value in unsorted:
             least_digit = value % modulus
             least_digit /= div
