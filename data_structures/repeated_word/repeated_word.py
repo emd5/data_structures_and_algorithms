@@ -8,15 +8,15 @@ def repeated_word(paragraph):
         elif word in word_dict:
             word_dict[word] += 1
 
-    max = ''
+    maximum = ''
 
     for k,v in word_dict.items():
-        if not max:
-           max = [k, v]
-        elif v > max[1]:
-            max = [k, v]
+        if not maximum:
+           maximum = [k, v]
+        elif v > maximum[1]:
+            maximum = [k, v]
 
-    if max[1] == 1:
+    if maximum[1] == 1:
         return "No repeated words"
     else:
-        return max[0]
+        return maximum[0]
