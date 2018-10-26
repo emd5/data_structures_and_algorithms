@@ -12,7 +12,6 @@ def empty_list():
 @pytest.fixture
 def small_list():
     """Set up a linked list with values.
-
     :return
         a non-empty list
     """
@@ -23,7 +22,6 @@ def small_list():
 @pytest.fixture
 def linked_list_1():
     """Set up a linked list with values for the merge list.
-
     :return
         a non-empty list
     """
@@ -107,7 +105,7 @@ def test_includes_returns_false_if_not_exists(small_list):
 
 def test_append_to_list(small_list):
     """Test to add a value to the small list and value is found. """
-    small_list.append(4)
+    small_list.insert(4)
     assert small_list.includes(4) is True
 
 
