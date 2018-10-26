@@ -8,9 +8,9 @@ setup(
               'sample_repo.challenges.fizzbuzz',
               'sample_repo.data_structures',
               'sample_repo.data_structures.list'],
-    url='https://github.com/sjschmidt44/data_structures_and_algorithms',
+    url='https://github.com/emd5/data_structures_and_algorithms',
     license='MIT',
-    author='Scott Schmidt',
-    author_email='scott@codefellows.com',
+    author='Liz Mahoney',
+    author_email='',
     description='Data Structures and Algorithms built using the Python standard library'
 )
