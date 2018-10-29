@@ -66,3 +66,9 @@ def test_append_in_middle_of_dll(dll_setup):
 
 def test_append_at_end_of_dll():
     pass
+
+
+def test_printed_list(empty_dll_setup):
+    new_list = DoublyLinkedList([4, 5, 3, 2, 1])
+    assert len(new_list) == 5
+    assert new_list.print_list == [1, 2, 3, 5, 4]

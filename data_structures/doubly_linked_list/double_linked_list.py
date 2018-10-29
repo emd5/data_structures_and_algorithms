@@ -31,17 +31,16 @@ class DoublyLinkedList(object):
         return self._length
 
     def insert(self, data):
-        """adds that value to the head of the list"""
+        """Adds that value to the head of the list"""
         try:
             if self.head is None:
                 self.head = Node(data, self.head)
-                self._length += 1
             else:
                 temp = self.head
                 self.head = Node(data)
                 self.head._next = temp
                 self.head._previous = None
-                self._length += 1
+            self._length += 1
         except AttributeError:
             return f'The head is {self.head}'
 
@@ -71,3 +70,13 @@ class DoublyLinkedList(object):
 
     def find(self, val):
         pass
+
+    def print_list(self):
+        dll_list = []
+        current = self.head
+
+        while current._next is not None:
+            dll_list.append(current.value)
+            current._next = current
+
+        return dll_list
