@@ -14,6 +14,7 @@ Implementation for Data Structures and Algorithms using Python!
     - [Graphs](./data_structures/graphs)
     - [LinkedList](./data_structures/doubly_linked_list)
     - [Hash Tables](./data_structures/hash_tables)
+    - [Doubly Linked List](./data_structures/doubly_linked_list)
     
 2. Algorithms
     - [Breadth First Traversal with Graphs](./data_structures/breadth_first_graph)
@@ -24,6 +25,8 @@ Implementation for Data Structures and Algorithms using Python!
     - [Bracket Validation](./challenges/multi_bracket_validation)
     - [Implement a Queue with 2 Stacks](./challenges/stack_queue)
     - [Repeated Word](./data_structures/repeated_word)
+    - [Integers to Roman Numeral](./challenges/roman_numerals)
+
     
 3. Sorting Algorithms
     - [Insertion Sort](./sorting_algos/insertion_sort)
