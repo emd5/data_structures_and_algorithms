@@ -1,7 +1,6 @@
 ## FizzBuzz
 
 ### Specifications
-_NOTE: You should alread have a public repository called `data-structures-and-algorithms_
 - Create a branch in your repository called `fizzbuzz`.
     - **If you call it anything else, you will get ZERO CREDIT with NO COMMENTS**
 - On your `fizzbuzz` branch create a file called `fizzbuzz.py`.
