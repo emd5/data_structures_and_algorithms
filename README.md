@@ -26,6 +26,7 @@ Implementation for Data Structures and Algorithms using Python!
     - [Implement a Queue with 2 Stacks](./challenges/stack_queue)
     - [Repeated Word](./data_structures/repeated_word)
     - [Integers to Roman Numeral](./challenges/roman_numerals)
+    - [Longest Palindrome with sets](./challenges/longest_palindrome_with_sets)
 
     
 3. Sorting Algorithms
